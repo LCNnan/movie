@@ -76,6 +76,7 @@ export default {
           font-size:1.4rem;
           margin-right:1.5rem;
           outline:none;
+          padding-left:2rem;
         }
     }
     .search-list{

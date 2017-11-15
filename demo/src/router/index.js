@@ -7,6 +7,7 @@ import BroadCast from "../components/broadcast/broadcast"
 import Group from "../components/group/group"
 import MovieDetail from "../components/movie/movieDetail"
 import Loading from "../components/loading/loading"
+import Login from "../components/login/login"
 // import SearchPage from "../components/search/searchPage"
 
 import Top from "../components/top/top"
@@ -47,6 +48,11 @@ export default new Router({
       path:"/searchPage/:tag",
       name:"SearchPage",
       component: resolve => require(["../components/search/searchPage.vue"],resolve)
+    },
+    {
+      path:"/login",
+      name:"Login",
+      component:Login
     }
   ]
 })

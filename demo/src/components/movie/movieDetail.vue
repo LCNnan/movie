@@ -1,6 +1,7 @@
 <template>
   <div class = "movieDetail">
     <top></top>
+    <loading v-if = "showLoading"></loading>
     <div class = "abstract">
       <div class = "left">
         <div class = "name">{{totalData.title}}</div>
@@ -41,7 +42,9 @@
     <div class = "kind mar-b pad">
       <div class = "title">查看更多分类</div>
       <template v-for = "item in totalData.genres">
-        <span>{{item}}</span>
+        <router-link :to = "'/searchPage/' + item">
+          <span>{{item}}</span>
+        </router-link>
       </template>
     </div>
   </div>
@@ -53,7 +56,8 @@ export default {
   data(){
     return{
       id:null,
-      totalData:[]
+      totalData:[],
+      showLoading:true
     }
   },
   created(){
@@ -68,7 +72,7 @@ export default {
         Net({"type":"Get","url":"https://api.douban.com/v2/movie/subject/"+ _this.id},function(res){
           if(res){
             _this.totalData = res.body;
-            console.log(_this.totalData);
+            _this.showLoading = false;
           }
         })
       }

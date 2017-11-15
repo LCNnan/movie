@@ -12,9 +12,9 @@ export default {
 <style lang="scss" scoped>
   .loading{
     margin:2rem;
-    text-align:center;
     img{
       width:4.8rem;
+      margin:0 auto;
     }
   }
 </style>

@@ -19,7 +19,7 @@
       <ul>
         <template v-for = "item in classfiData">
           <li>
-            <router-link to = "/" class = "classify-type">{{item}}</router-link>
+            <router-link :to = "'/searchPage/' + item" class = "classify-type">{{item}}</router-link>
           </li>
         </template>
       </ul>

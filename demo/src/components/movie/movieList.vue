@@ -1,5 +1,6 @@
 <template>
     <div class = "movie-list">
+      <loading v-if = "showLoading"></loading>
       <template v-for = "item in dataList">
         <div class = "title">
             <span class = "movie-type">{{item.title}}</span>
@@ -22,11 +23,14 @@
       props:["dataList"],
       data(){
         return{
-
+          showLoading:true
         }
       },
-      created(){
-        // console.log(this.dataList);
+      mounted(){
+        console.log(this.dataList.length);
+        if(!this.dataList.length){
+          this.showLoading = false;
+        }
       },
       methods:{
 
