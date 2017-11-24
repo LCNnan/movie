@@ -143,6 +143,8 @@ export default {
         background:#f3f3f3;
         border-radius:0.3rem;
         font-size:1.4rem;
+        box-sizing:border-box;
+        padding-left:2rem;
       }
     }
     .search-list{
